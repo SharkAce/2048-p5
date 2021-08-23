@@ -1,3 +1,4 @@
+var msg = "swipe"
 let failState = false
 let boxList = []
 let tiles = []
@@ -8,6 +9,14 @@ for (let y = 0; y<= 3; y++){
 }
 function setup () {
   createCanvas(length, height)
+  var options = {
+    preventDefault: true
+  }
+  var hammer = new Hammer(document.body, options)
+  hammer.get('swipe').set({
+    direction: Hammer.DIRECTION_ALL
+  })
+  hammer.on("swipe", swiped)
 }
 
 function draw () {
@@ -43,6 +52,25 @@ function keyPressed(){
       moveBox('x', 1)
       newBox()
     }
+  }
+  for (box of boxList){
+    box.hasMerged = false
+  }
+}
+function swiped(event) {
+  console.log(event);
+  if (event.direction == 4) {
+    moveBox('x', 1)
+    newBox()
+  } else if (event.direction == 8) {
+    moveBox('y', -1)
+    newBox()
+  } else if (event.direction == 16) {
+    moveBox('y', 1)
+    newBox()
+  } else if (event.direction == 2) {
+    moveBox('x', -1)
+    newBox()
   }
   for (box of boxList){
     box.hasMerged = false
