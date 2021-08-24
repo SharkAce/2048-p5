@@ -4,15 +4,15 @@ function keyPressed(){
       moveBox('y', -1)
       newBox()
     }
-    if (key == 'a' || key == 'ArrowLeft'){
+    else if (key == 'a' || key == 'ArrowLeft'){
       moveBox('x', -1)
       newBox()
     }
-    if (key == 's' || key == 'ArrowDown'){
+    else if (key == 's' || key == 'ArrowDown'){
       moveBox('y', 1)
       newBox()
     }
-    if (key == 'd' || key == 'ArrowRight'){
+    else if (key == 'd' || key == 'ArrowRight'){
       moveBox('x', 1)
       newBox()
     }
