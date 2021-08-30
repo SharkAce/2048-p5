@@ -31,4 +31,5 @@ class Box{
     this.isStatic = false
     tileColor(this.num)
     circle(50,50,50)
+  }
 }
