@@ -26,7 +26,6 @@ class Box{
     this.yPx = this.y*(boxSize)
     if (frame >= 20){
       this.isStatic = true
-      break
     }
     this.isStatic = false
     tileColor(this.num)
