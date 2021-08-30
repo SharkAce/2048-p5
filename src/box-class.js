@@ -21,4 +21,14 @@ class Box{
       text(this.num, this.xPx+(boxSize*0.5), this.yPx+(boxSize*0.55))
     }  
   }
+  tilePop(frame){
+    this.xPx = this.x*(boxSize)
+    this.yPx = this.y*(boxSize)
+    if (frame >= 20){
+      this.isStatic = true
+      break
+    }
+    this.isStatic = false
+    tileColor(this.num)
+    circle(50,50,50)
 }
