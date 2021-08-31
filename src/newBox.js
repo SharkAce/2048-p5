@@ -1,3 +1,11 @@
+//creating an array of every possible tiles
+let tiles = []
+for (let y = 0; y<= 3; y++){
+  for (let x = 0; x<= 3; x++){
+    tiles.push([x, y])
+  }
+}
+
 function newBox(){
   let i = 0
   while(true){
