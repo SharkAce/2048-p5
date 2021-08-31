@@ -43,6 +43,11 @@ function draw () {
       box.popFrame ++
     }
   }
+  if (failState){
+    textSize(70)
+    textAlign(CENTER, CENTER)
+    text('You lost', length/2, height/2)
+  }
 }
 keyPressed()
 swiped(event)

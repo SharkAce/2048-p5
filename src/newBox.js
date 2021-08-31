@@ -1,29 +1,19 @@
-//creating an array of every possible tiles
-let tiles = []
-for (let y = 0; y<= 3; y++){
-  for (let x = 0; x<= 3; x++){
-    tiles.push([x, y])
-  }
-}
-
 function newBox(){
-  let i = 0
-  while(true){
-    i++
-    let isEmpty = true
-    var tile = random(tiles)
-    for (data of boxList){
-      if (tile[0] == data.x && tile[1] == data.y){
-        isEmpty = false
+  let emptyTiles = []
+  for (let y = 0; y<= 3; y++){
+    for (let x = 0; x<= 3; x++){
+      let isUnique = true
+      for (box of boxList){
+        if (box.x == x && box.y == y){isUnique = false}
       }
-    }
-    if (isEmpty == true) {break}
-    else if (i == 4096) {
-      failState = true
-      break
+      if (isUnique){emptyTiles.push([x,y])}
     }
   }
-  let num
-  0.1 >= Math.random() ? num = 4 : num = 2
-  boxList.push(new Box(tile[0], tile[1], num))
+  let newBox = random(emptyTiles)
+  let num; 0.1 >= Math.random() ? num = 4 : num = 2
+  if (newBox == undefined) {
+    failState = true
+  }else{
+    boxList.push(new Box(newBox[0], newBox[1], num))
+  }
 }
