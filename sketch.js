@@ -31,31 +31,19 @@ function draw () {
   }
 
 
-  for (box of boxList)
-  box.render()
+  for (box of boxList){
+    if (box.isStatic) {box.render()}
+
+    if (box.hasMerged || box.isNewBox){
+      box.popFrame = 1
+      box.hasMerged = false
+      box.isNewBox = false
+    }
+    if (box.popFrame >= 1 && box.popFrame < 10){  //&& moveAnimation == false
+      box.tilePop(box.popFrame)
+      box.popFrame ++
+    }
+  }
 }
 keyPressed()
-// function keyPressed(){
-//   if (failState == false){
-//     if (key == 'w' || key == 'ArrowUp'){
-//       moveBox('y', -1)
-//       newBox()
-//     }
-//     if (key == 'a' || key == 'ArrowLeft'){
-//       moveBox('x', -1)
-//       newBox()
-//     }
-//     if (key == 's' || key == 'ArrowDown'){
-//       moveBox('y', 1)
-//       newBox()
-//     }
-//     if (key == 'd' || key == 'ArrowRight'){
-//       moveBox('x', 1)
-//       newBox()
-//     }
-//   }
-//   for (box of boxList){
-//     box.hasMerged = false
-//   }
-// }
 swiped(event)

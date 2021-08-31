@@ -1,4 +1,5 @@
 function keyPressed(){
+
   if (failState == false){
     if (key == 'w' || key == 'ArrowUp'){
       moveBox('y', -1)
@@ -16,9 +17,6 @@ function keyPressed(){
       moveBox('x', 1)
       newBox()
     }
-  }
-  for (box of boxList){
-    box.hasMerged = false
   }
 }
 
@@ -41,8 +39,5 @@ function swiped(event){
     case 16:
       moveBox('y', 1)
       newBox()
-  }
-  for (box of boxList){
-    box.hasMerged = false
   }
 }
