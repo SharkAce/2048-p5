@@ -9,7 +9,7 @@ function setup () {
   var options = {
     preventDefault: true
   }
-  //setting up swipe support with hammerjs
+  //setting up touch screen support with hammerjs
   var hammer = new Hammer(document.body, options)
   hammer.get('swipe').set({
     direction: Hammer.DIRECTION_ALL
