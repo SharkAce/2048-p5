@@ -1,15 +1,15 @@
 class Box{
-  constructor(x, y, num){
+  constructor(x, y, num, hasMerged, isNew){
     this.xPx = x*(boxSize)
     this.yPx = y*(boxSize)
     this.x = x
     this.y = y
     this.num = num
-    this.hasMerged = false
+    this.hasMerged = hasMerged
     this.isStatic = true
     this.popFrame = 0
     this.moveFrame = 0
-    this.isNewBox = true
+    this.isNew = isNew
   }
   render(){
     if (this.isStatic) {

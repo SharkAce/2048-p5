@@ -2,6 +2,7 @@
 var msg = "swipe"
 let failState = false
 let boxList = []
+let newBoxList = []
 
 function setup () {
   newBox();newBox()
@@ -33,10 +34,10 @@ function draw () {
   for (box of boxList){
     if (box.isStatic) {box.render()}
 
-    if (box.hasMerged || box.isNewBox){
+    if (box.hasMerged || box.isNew){
       box.popFrame = 1
       box.hasMerged = false
-      box.isNewBox = false
+      box.isNew = false
     }
     if (box.popFrame >= 1 && box.popFrame < 10){
       box.tilePop(box.popFrame)

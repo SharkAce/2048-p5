@@ -18,6 +18,6 @@ function newBox(){
     failState = true
   }else{
     //adding the new box to the array of boxes
-    boxList.push(new Box(newBox[0], newBox[1], num))
+    boxList.push(new Box(newBox[0], newBox[1], num, false, true))
   }
 }
