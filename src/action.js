@@ -3,6 +3,10 @@ let intSign
 
 function action(){
   moveBox(axis, intSign)
+  boxList = []
+  for (box of newBoxList){
+    boxList.push(new Box(box.x, box.y, box.num, box.hasMerged, box.isNew))
+  }
   newBox()
 }
 
