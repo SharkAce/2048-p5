@@ -1,20 +1,32 @@
+let axis
+let intSign
+
+function action(){
+  moveBox(axis, intSign)
+  newBox()
+}
+
 function keyPressed(){
   if (failState == false){
     if (key == 'w' || key == 'ArrowUp'){
-      moveBox('y', -1)
-      newBox()
+      axis = 'y'
+      intSign = -1
+      action()
     }
     else if (key == 'a' || key == 'ArrowLeft'){
-      moveBox('x', -1)
-      newBox()
+      axis = 'x'
+      intSign = -1
+      action()
     }
     else if (key == 's' || key == 'ArrowDown'){
-      moveBox('y', 1)
-      newBox()
+      axis = 'y'
+      intSign = 1
+      action()
     }
     else if (key == 'd' || key == 'ArrowRight'){
-      moveBox('x', 1)
-      newBox()
+      axis = 'x'
+      intSign = 1
+      action()
     }
   }
 }
@@ -25,20 +37,25 @@ function swiped(event){
   if (failState == false){
     switch(event.direction) {
       case 2:
-        moveBox('x', -1)
-        newBox()
+        axis = 'x'
+        intSign = -1
+        action()
         break
       case 4:
-        moveBox('x', 1)
-        newBox()
+        axis = 'x'
+        intSign = 1
+        action()
         break
       case 8:
-        moveBox('y', -1)
-        newBox()
+        axis = 'y'
+        intSign = -1
+        action()
         break
       case 16:
-        moveBox('y', 1)
-        newBox()
+        axis = 'y'
+        intSign = 1
+        action()
+        break
     }
   }
 }
