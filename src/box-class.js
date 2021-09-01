@@ -1,4 +1,5 @@
 class Box{
+
   constructor(x, y, num, hasMerged, isNew){
     this.xPx = x*(boxSize)
     this.yPx = y*(boxSize)
