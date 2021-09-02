@@ -5,7 +5,8 @@ let boxList = []
 let newBoxList = []
 
 function setup () {
-  newBox();newBox()
+  // newBox();newBox()
+  end()
   createCanvas(length, height)
   var options = {
     preventDefault: true
