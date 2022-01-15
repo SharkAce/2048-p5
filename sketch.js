@@ -6,7 +6,14 @@ let newBoxList = []
 
 function setup () {
   newBox();newBox()
-  createCanvas(length, height)
+  let canvas = createCanvas(length, height)
+  let pos = {
+  	x : (windowWidth - width) / 2,
+	y : (windowHeight - height) / 2
+  }
+
+  canvas.position(pos.x, pos.y)
+
   var options = {
     preventDefault: true
   }
